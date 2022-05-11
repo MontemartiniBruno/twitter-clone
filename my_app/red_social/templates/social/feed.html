@@ -7,9 +7,9 @@
 {% for post in posts %}
 <article>
     <div class="container-article">
-        <img src="../../static/batman.png">
+        <img src="{{post.user.profile.image.url}}">
         <div>
-            <h2 class="username"><a href="#">{{post.user.username}}</a></h2>
+            <h2 class="username"><a href={% url 'profile' post.user.username %}>{{post.user.username}}</a></h2>
             <i class="clock"></i>
             <time data-time="#">{{post.timestamp|naturaltime}}</time>
             <div class="post">{{post.content}}</div>
